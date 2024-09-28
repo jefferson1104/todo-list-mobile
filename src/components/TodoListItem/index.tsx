@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { ITodoItem } from "../../interfaces/todo-item";
 
 import { styles } from "./styles";
+import { Trash2 } from "lucide-react-native";
+import { colors } from "../../styles/colors";
 
 interface ITodoListItemProps {
   item: ITodoItem;
@@ -33,10 +35,7 @@ export function TodoListItem ({ item, onToggle, onDelete }: ITodoListItemProps) 
         style={styles.deleteButton}
         onPress={() => onDelete(item.id)}
       >
-        <Image
-          source={require('../../assets/trash.png')}
-          style={{ width: 16, height: 16 }}
-        />
+        <Trash2 size={18} color={colors.gray300} />
       </TouchableOpacity>
     </View>
   )
